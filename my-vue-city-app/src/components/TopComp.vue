@@ -2,7 +2,7 @@
   <header>
         <ul class="gnb">
             <li v-for="(v,i) in this.sdata" v-bind:key="i" v-if="i!='인트로'">
-                <a href="#" v-on:click="chgData(i)">{{v}}</a>
+                <a href="#" v-on:click="chgData(i)">{{i}}</a>
             </li>
             <!-- <li>
                 <a href="#" v-on:click="chgData('부산')">부산</a>
@@ -19,7 +19,7 @@ export default {
   name: 'TopArea',
   data () {
     return {
-      sdata: this.$store.state.myD
+      sdata: this.$store.state.cityData
     }
   },
   methods:{
