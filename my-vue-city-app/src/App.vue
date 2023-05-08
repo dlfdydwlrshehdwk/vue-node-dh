@@ -16,7 +16,9 @@ export default {
     TopArea,
     MainArea,
     InfoArea,
-  }
+
+  },
+  
 }
 </script>
 
