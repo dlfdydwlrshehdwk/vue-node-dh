@@ -30,7 +30,7 @@ const store = new Vuex.Store({
         cityData:{...myD0, ...myD1},
         // 변경되는 데이터는 state구역에 외부변수를 할당하여 
         // 변경시 가상돔에 반영하여 실제 돔 으로 연결되도록 등록해준다.
-        // 이름은 같은 이름으로 사용해도 무방함!(구분되기때문)
+        // 이름은 같은 이름으로 사용해도 무방함!
         myD0 : myD0,
         myD1 : myD1,
         myD2 : myD2,
@@ -58,12 +58,12 @@ const store = new Vuex.Store({
         }, // initSet 메서드 //
 
         // 데이터 변경메서드 
-        chgData(a,b){
+        chgData(헐,슉){
             // 이 자리에서 바로 스토어 변수를 업데이트 한다.
             // 1. 이미지 변수 : imgsrc
-            a.imgsrc = a.cityData[b].이미지;
+            헐.imgsrc = 헐.cityData[슉].이미지;
             // 2. 도시설명 변수 : desc
-            a.desc = a.cityData[b].설명;
+            헐.desc = 헐.cityData[슉].설명;
         }, // chgData 메서드 //
 
         // 메뉴 데이터 변경 메서드 //
@@ -73,6 +73,10 @@ const store = new Vuex.Store({
             슉==1? 
             {...헐.myD0,...헐.myD1}:
             {...헐.myD0,...헐.myD2};
+            
+            // 메뉴 변경시 인트로화면으로 넘어가기
+            헐.imgsrc = 헐.cityData.인트로.이미지
+            헐.desc = 헐.cityData.인트로.설명
         }, // chgMenu 메서드 //
     },
     // (3)백엔 관련 코딩 비동기처리 메서드구역 : 호출시 dispatch()사용
